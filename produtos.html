@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça os produtos do Grupo BB Agronegócios: frutas, legumes, verduras, tubérculos, grãos e temperos.">
+    <meta name="theme-color" content="#183d2b">
+    <title>Produtos | Grupo BB Agronegócios</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="ESTILO/estilo.css">
+    <script src="JS/script.js" defer></script>
+
+    <style>
+        .controles-produtos {
+            display: grid;
+            gap: 18px;
+            margin: 28px 0 16px;
+        }
+
+        .campo-busca {
+            display: grid;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .campo-busca input {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 15px;
+            border: 1px solid #cbd8cd;
+            border-radius: 8px;
+            font: inherit;
+            box-sizing: border-box;
+        }
+
+        .filtros-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .filtros-produtos button {
+            padding: 10px 16px;
+            border: 1px solid #cbd8cd;
+            border-radius: 30px;
+            background: #fff;
+            color: #183d2b;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .filtros-produtos button.ativo,
+        .filtros-produtos button:hover {
+            background: #183d2b;
+            color: #fff;
+            border-color: #183d2b;
+        }
+
+        .contador-produtos {
+            margin: 16px 0;
+            color: #526257;
+        }
+
+        .grade-produtos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .produto-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e0e8e1;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(16, 40, 28, .07);
+        }
+
+        .produto-card[hidden] {
+            display: none !important;
+        }
+
+        .produto-card-imagem {
+            height: 205px;
+            overflow: hidden;
+            background: #f1f5f1;
+        }
+
+        .produto-card-imagem img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .produto-card-conteudo {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 18px;
+        }
+
+        .produto-categoria {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #567a5d;
+            font-size: .78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        .produto-card h3 {
+            margin: 0 0 10px;
+            color: #183d2b;
+            font-size: 1.2rem;
+        }
+
+        .produto-card p {
+            flex: 1;
+            margin: 0 0 18px;
+            line-height: 1.6;
+            color: #536157;
+        }
+
+        .botao-nutricao {
+            width: 100%;
+            min-height: 44px;
+            margin-top: auto;
+            padding: 11px 13px;
+            border: 0;
+            border-radius: 7px;
+            background: #183d2b;
+            color: #fff;
+            font: inherit;
+            font-size: .9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .botao-nutricao:hover {
+            background: #2d6241;
+        }
+
+        .secao-nutricao {
+            margin-top: 48px;
+            padding: 28px;
+            border-radius: 12px;
+            background: #fff;
+            border: 1px solid #e0e8e1;
+            scroll-margin-top: 100px;
+        }
+
+        .secao-nutricao h2 {
+            color: #183d2b;
+        }
+
+        .nutricao-grade {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .nutricao-item {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: #f5f8f5;
+            border: 1px solid #e3eae3;
+            border-radius: 7px;
+        }
+
+        .nutricao-item dt {
+            margin: 0;
+        }
+
+        .nutricao-item dd {
+            margin: 0;
+            text-align: right;
+            white-space: nowrap;
+            color: #183d2b;
+            font-weight: 700;
+        }
+
+        .nota-nutricional {
+            margin-top: 18px;
+            color: #68756b;
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        .faixa-comercial {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 40px;
+            padding: 28px;
+            border-radius: 12px;
+            background: #183d2b;
+            color: #fff;
+        }
+
+        .faixa-comercial h2 {
+            margin: 8px 0;
+            color: #fff;
+        }
+
+        .faixa-comercial p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .faixa-comercial .sobretitulo {
+            color: #c7d9b5;
+        }
+
+        .faixa-comercial .botao {
+            flex-shrink: 0;
+        }
+
+        .sem-resultados {
+            grid-column: 1 / -1;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            background: #f5f8f5;
+        }
+
+        @media (max-width: 900px) {
+            .grade-produtos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grade-produtos {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .produto-card-imagem {
+                height: 220px;
+            }
+
+            .nutricao-grade {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .secao-nutricao {
+                padding: 18px;
+            }
+
+            .faixa-comercial {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a class="marca" href="index.html" aria-label="Grupo BB Agronegócios - Início">
+        <img src="img/logo.png" alt="Logo do Grupo BB Agronegócios">
+        <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+    </a>
+
+    <button class="menu-toggle" type="button"
+            aria-label="Abrir menu"
+            aria-controls="menu-principal"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="historia.html">Nossa história</a>
+        <a href="produtos.html" aria-current="page">Produtos</a>
+        <a href="safra.html">Safra</a>
+        <a href="sedes.html">Nossas sedes</a>
+        <a href="equipe.html">Equipe</a>
+        <a href="patrocinadores.html">Parceiros</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<main>
+    <section class="pagina-topo">
+        <div class="container">
+            <span class="sobretitulo">QUALIDADE DO CAMPO À MESA</span>
+            <h1>Nossos produtos</h1>
+            <p>
+                Conheça nossa variedade de frutas, legumes, verduras,
+                tubérculos, grãos e temperos. Pesquise ou selecione uma
+                categoria para encontrar o produto desejado.
+            </p>
+        </div>
+    </section>
+
+    <section class="secao catalogo">
+        <div class="container">
+
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">NOSSO CATÁLOGO</span>
+                <h2>Produtos selecionados</h2>
+                <p>
+                    Consulte os produtos e suas informações nutricionais
+                    aproximadas por 100 g.
+                </p>
+            </div>
+
+            <div class="controles-produtos">
+                <label class="campo-busca" for="busca-produtos">
+                    <span>Pesquisar produto</span>
+                    <input type="search" id="busca-produtos"
+                           placeholder="Ex.: brócolis, repolho, mandioquinha..."
+                           autocomplete="off">
+                </label>
+
+                <div class="filtros-produtos" aria-label="Filtrar produtos">
+                    <button type="button" data-filtro="todos" class="ativo">Todos</button>
+                    <button type="button" data-filtro="frutas">Frutas</button>
+                    <button type="button" data-filtro="legumes">Legumes e verduras</button>
+                    <button type="button" data-filtro="tuberculos">Tubérculos e raízes</button>
+                    <button type="button" data-filtro="graos">Grãos</button>
+                    <button type="button" data-filtro="temperos">Temperos</button>
+                </div>
+            </div>
+
+            <p id="contador-produtos" class="contador-produtos" aria-live="polite"></p>
+
+            <div class="grade-produtos" id="grade-produtos">
+
+                <article class="produto-card" data-categoria="frutas">
+                    <div class="produto-card-imagem"><img src="img/morango.jpg" alt="Morangos frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Fruta</span>
+                        <h3>Morango</h3>
+                        <p>Fruta de sabor marcante, conhecida pela presença de vitamina C.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="morango">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="frutas">
+                    <div class="produto-card-imagem"><img src="img/laranja.jpg" alt="Laranjas frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Fruta</span>
+                        <h3>Laranja</h3>
+                        <p>Fruta cítrica conhecida pela vitamina C e pelo sabor refrescante.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="laranja">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="frutas">
+                    <div class="produto-card-imagem"><img src="img/abacate.jpg" alt="Abacates frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Fruta</span>
+                        <h3>Abacate</h3>
+                        <p>Fruta cremosa, utilizada em receitas doces e salgadas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="abacate">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="frutas">
+                    <div class="produto-card-imagem"><img src="img/maca.jpg" alt="Maçãs frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Fruta</span>
+                        <h3>Maçã</h3>
+                        <p>Fruta prática para o consumo diário e preparo de receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="maca">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="frutas">
+                    <div class="produto-card-imagem"><img src="img/abacaxi.jpg" alt="Abacaxi fresco" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Fruta</span>
+                        <h3>Abacaxi</h3>
+                        <p>Fruta tropical consumida fresca ou utilizada em receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="abacaxi">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/chuchu.jpg" alt="Chuchu fresco" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Chuchu</h3>
+                        <p>Vegetal versátil utilizado em refogados e acompanhamentos.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="chuchu">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/pimentao.jpg" alt="Pimentões frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Pimentão</h3>
+                        <p>Colorido e versátil, utilizado em saladas e diversas receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="pimentao">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/vagem.jpg" alt="Vagens frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Vagem</h3>
+                        <p>Ingrediente utilizado em acompanhamentos e pratos variados.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="vagem">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/brocolis.jpg" alt="Brócolis frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Verdura</span>
+                        <h3>Brócolis</h3>
+                        <p>Vegetal que pode ser preparado cozido, refogado ou no vapor.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="brocolis">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/couve-flor.jpg" alt="Couve-flor fresca" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Verdura</span>
+                        <h3>Couve-flor</h3>
+                        <p>Alimento versátil para saladas, acompanhamentos e receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="couve-flor">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/tomate.jpg" alt="Tomates frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Tomate</h3>
+                        <p>Ingrediente presente em saladas, molhos e diversas receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="tomate">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/cenoura.jpg" alt="Cenouras frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Cenoura</h3>
+                        <p>Fonte de betacaroteno, pode ser consumida crua ou cozida.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="cenoura">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/repolho.jpg" alt="Repolho verde" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Verdura</span>
+                        <h3>Repolho verde</h3>
+                        <p>Vegetal utilizado em saladas, refogados e acompanhamentos.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="repolho">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/repolho-roxo.jpg" alt="Repolho roxo" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Verdura</span>
+                        <h3>Repolho roxo</h3>
+                        <p>Variedade de cor intensa, utilizada em saladas e pratos variados.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="repolho-roxo">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/quiabo.jpg" alt="Quiabos frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Quiabo</h3>
+                        <p>Ingrediente tradicional em refogados e pratos brasileiros.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="quiabo">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/pepino-japones.jpg" alt="Pepinos japoneses" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Pepino japonês</h3>
+                        <p>Utilizado principalmente em saladas e preparações frescas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="pepino-japones">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/abobrinha.jpg" alt="Abobrinhas frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Abobrinha</h3>
+                        <p>Versátil em refogados, assados e diferentes receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="abobrinha">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="legumes">
+                    <div class="produto-card-imagem"><img src="img/berinjela.jpg" alt="Berinjelas frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Legume</span>
+                        <h3>Berinjela</h3>
+                        <p>Alimento utilizado em preparações assadas, refogadas e recheadas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="berinjela">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="tuberculos">
+                    <div class="produto-card-imagem"><img src="img/batata-inglesa.jpg" alt="Batatas inglesas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tubérculo</span>
+                        <h3>Batata inglesa</h3>
+                        <p>Versátil na cozinha, é fonte de carboidratos e energia.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="batata-inglesa">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="tuberculos">
+                    <div class="produto-card-imagem"><img src="img/batata-asterix.jpg" alt="Batatas Asterix" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tubérculo</span>
+                        <h3>Batata Asterix</h3>
+                        <p>Variedade de casca rosada, utilizada em diferentes preparações.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="batata-asterix">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="tuberculos">
+                    <div class="produto-card-imagem"><img src="img/batata-doce.jpg" alt="Batatas-doces" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tubérculo</span>
+                        <h3>Batata-doce</h3>
+                        <p>Fonte de carboidratos, utilizada em preparações doces e salgadas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="batata-doce">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="tuberculos">
+                    <div class="produto-card-imagem"><img src="img/inhame.jpg" alt="Inhames frescos" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tubérculo</span>
+                        <h3>Inhame</h3>
+                        <p>Utilizado cozido em sopas, acompanhamentos e outras receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="inhame">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="tuberculos">
+                    <div class="produto-card-imagem"><img src="img/mandioquinha.jpg" alt="Mandioquinhas frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Raiz</span>
+                        <h3>Mandioquinha</h3>
+                        <p>Raiz de sabor suave, usada em purês, sopas e acompanhamentos.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="mandioquinha">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="graos">
+                    <div class="produto-card-imagem"><img src="img/milho.jpg" alt="Milho verde" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Grão</span>
+                        <h3>Milho verde</h3>
+                        <p>Alimento utilizado em receitas doces, salgadas e acompanhamentos.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="milho">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="temperos">
+                    <div class="produto-card-imagem"><img src="img/alho.jpg" alt="Cabeças de alho" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tempero</span>
+                        <h3>Alho</h3>
+                        <p>Ingrediente aromático utilizado para temperar diferentes pratos.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="alho">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="temperos">
+                    <div class="produto-card-imagem"><img src="img/cebola.jpg" alt="Cebolas frescas" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tempero</span>
+                        <h3>Cebola</h3>
+                        <p>Ingrediente tradicional para temperos, refogados e saladas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="cebola">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-categoria="temperos">
+                    <div class="produto-card-imagem"><img src="img/gengibre.jpg" alt="Raiz de gengibre" loading="lazy"></div>
+                    <div class="produto-card-conteudo">
+                        <span class="produto-categoria">Tempero</span>
+                        <h3>Gengibre</h3>
+                        <p>Raiz aromática utilizada em bebidas, temperos e receitas.</p>
+                        <button type="button" class="botao-nutricao" data-nutricao="gengibre">Consultar valor nutricional</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <section id="informacoes-nutricionais" class="secao-nutricao" aria-live="polite">
+                <span class="sobretitulo">INFORMAÇÃO AO CONSUMIDOR</span>
+                <h2>Valor nutricional</h2>
+                <p>Selecione o botão de um produto para consultar seus valores nutricionais aproximados por 100 g.</p>
+
+                <div id="conteudo-nutricional">
+                    <p>As informações do alimento selecionado aparecerão aqui.</p>
+                </div>
+
+                <p class="nota-nutricional">
+                    Valores aproximados por 100 g. Os dados podem variar conforme
+                    a variedade, a maturação e o preparo do alimento.
+                </p>
+            </section>
+
+            <div class="faixa-comercial">
+                <div>
+                    <span class="sobretitulo">FALE COM NOSSA EQUIPE</span>
+                    <h2>Quer consultar a disponibilidade?</h2>
+                    <p>Entre em contato para conversar sobre os produtos e as condições de atendimento.</p>
+                </div>
+                <a href="contato.html" class="botao botao-claro">Entre em contato</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-conteudo">
+        <div>
+            <a class="marca marca-rodape" href="index.html">
+                <img src="img/logo.png" alt="Logo do Grupo BB Agronegócios">
+                <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+            </a>
+            <p>Compromisso com o campo, qualidade e parceria.</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="produtos.html">Produtos</a>
+            <a href="sedes.html">Nossas sedes</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <p class="rodape-copyright">
+            © 2026 Grupo BB Agronegócios. Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function () {
+    "use strict";
+
+    const dadosNutricionais = {
+        "morango": {
+            nome: "Morango",
+            preparo: "cru",
+            energia: "30 kcal",
+            proteinas: "0,9 g",
+            carboidratos: "6,8 g",
+            gorduras: "0,3 g",
+            fibras: "1,7 g"
+        },
+        "laranja": {
+            nome: "Laranja",
+            preparo: "crua",
+            energia: "46 kcal",
+            proteinas: "0,9 g",
+            carboidratos: "11,5 g",
+            gorduras: "0,1 g",
+            fibras: "1,8 g"
+        },
+        "abacate": {
+            nome: "Abacate",
+            preparo: "cru",
+            energia: "96 kcal",
+            proteinas: "1,2 g",
+            carboidratos: "6,0 g",
+            gorduras: "8,4 g",
+            fibras: "6,3 g"
+        },
+        "maca": {
+            nome: "Maçã",
+            preparo: "crua",
+            energia: "56 kcal",
+            proteinas: "0,3 g",
+            carboidratos: "14,2 g",
+            gorduras: "0,0 g",
+            fibras: "1,3 g"
+        },
+        "abacaxi": {
+            nome: "Abacaxi",
+            preparo: "cru",
+            energia: "48 kcal",
+            proteinas: "0,9 g",
+            carboidratos: "12,3 g",
+            gorduras: "0,1 g",
+            fibras: "1,0 g"
+        },
+        "chuchu": {
+            nome: "Chuchu",
+            preparo: "cru",
+            energia: "19 kcal",
+            proteinas: "0,7 g",
+            carboidratos: "4,9 g",
+            gorduras: "0,1 g",
+            fibras: "1,3 g"
+        },
+        "pimentao": {
+            nome: "Pimentão",
+            preparo: "cru",
+            energia: "23 kcal",
+            proteinas: "1,0 g",
+            carboidratos: "4,9 g",
+            gorduras: "0,1 g",
+            fibras: "2,6 g"
+        },
+        "vagem": {
+            nome: "Vagem",
+            preparo: "crua",
+            energia: "35 kcal",
+            proteinas: "1,8 g",
+            carboidratos: "5,3 g",
+            gorduras: "0,2 g",
+            fibras: "2,4 g"
+        },
+        "brocolis": {
+            nome: "Brócolis",
+            preparo: "cru",
+            energia: "25 kcal",
+            proteinas: "2,1 g",
+            carboidratos: "4,0 g",
+            gorduras: "0,3 g",
+            fibras: "3,4 g"
+        },
+        "couve-flor": {
+            nome: "Couve-flor",
+            preparo: "crua",
+            energia: "23 kcal",
+            proteinas: "1,9 g",
+            carboidratos: "4,5 g",
+            gorduras: "0,2 g",
+            fibras: "2,1 g"
+        },
+        "tomate": {
+            nome: "Tomate",
+            preparo: "cru",
+            energia: "15 kcal",
+            proteinas: "1,1 g",
+            carboidratos: "3,1 g",
+            gorduras: "0,2 g",
+            fibras: "1,2 g"
+        },
+        "cenoura": {
+            nome: "Cenoura",
+            preparo: "crua",
+            energia: "34 kcal",
+            proteinas: "1,3 g",
+            carboidratos: "7,7 g",
+            gorduras: "0,2 g",
+            fibras: "3,2 g"
+        },
+        "repolho": {
+            nome: "Repolho verde",
+            preparo: "cru",
+            energia: "25 kcal",
+            proteinas: "1,3 g",
+            carboidratos: "5,8 g",
+            gorduras: "0,1 g",
+            fibras: "2,5 g"
+        },
+        "repolho-roxo": {
+            nome: "Repolho roxo",
+            preparo: "cru",
+            energia: "31 kcal",
+            proteinas: "1,4 g",
+            carboidratos: "7,4 g",
+            gorduras: "0,1 g",
+            fibras: "2,1 g"
+        },
+        "quiabo": {
+            nome: "Quiabo",
+            preparo: "cru",
+            energia: "30 kcal",
+            proteinas: "1,9 g",
+            carboidratos: "6,4 g",
+            gorduras: "0,1 g",
+            fibras: "4,6 g"
+        },
+        "pepino-japones": {
+            nome: "Pepino japonês",
+            preparo: "cru",
+            energia: "10 kcal",
+            proteinas: "0,7 g",
+            carboidratos: "2,0 g",
+            gorduras: "0,1 g",
+            fibras: "0,9 g"
+        },
+        "abobrinha": {
+            nome: "Abobrinha",
+            preparo: "crua",
+            energia: "19 kcal",
+            proteinas: "1,1 g",
+            carboidratos: "4,2 g",
+            gorduras: "0,1 g",
+            fibras: "1,4 g"
+        },
+        "berinjela": {
+            nome: "Berinjela",
+            preparo: "crua",
+            energia: "20 kcal",
+            proteinas: "1,2 g",
+            carboidratos: "4,4 g",
+            gorduras: "0,1 g",
+            fibras: "2,9 g"
+        },
+        "batata-inglesa": {
+            nome: "Batata inglesa",
+            preparo: "crua",
+            energia: "64 kcal",
+            proteinas: "1,8 g",
+            carboidratos: "14,7 g",
+            gorduras: "0,0 g",
+            fibras: "1,3 g"
+        },
+        "batata-asterix": {
+            nome: "Batata Asterix",
+            preparo: "crua",
+            energia: "70 kcal",
+            proteinas: "2,0 g",
+            carboidratos: "16,0 g",
+            gorduras: "0,1 g",
+            fibras: "1,4 g"
+        },
+        "batata-doce": {
+            nome: "Batata-doce",
+            preparo: "crua",
+            energia: "77 kcal",
+            proteinas: "0,6 g",
+            carboidratos: "18,4 g",
+            gorduras: "0,1 g",
+            fibras: "2,2 g"
+        },
+        "inhame": {
+            nome: "Inhame",
+            preparo: "cru",
+            energia: "97 kcal",
+            proteinas: "2,1 g",
+            carboidratos: "23,2 g",
+            gorduras: "0,2 g",
+            fibras: "1,7 g"
+        },
+        "mandioquinha": {
+            nome: "Mandioquinha",
+            preparo: "crua",
+            energia: "101 kcal",
+            proteinas: "1,4 g",
+            carboidratos: "24,0 g",
+            gorduras: "0,2 g",
+            fibras: "2,1 g"
+        },
+        "milho": {
+            nome: "Milho verde",
+            preparo: "conforme a tabela de referência",
+            energia: "138 kcal",
+            proteinas: "6,6 g",
+            carboidratos: "28,0 g",
+            gorduras: "0,6 g",
+            fibras: "3,9 g"
+        },
+        "alho": {
+            nome: "Alho",
+            preparo: "cru",
+            energia: "113 kcal",
+            proteinas: "7,0 g",
+            carboidratos: "23,9 g",
+            gorduras: "0,2 g",
+            fibras: "4,3 g"
+        },
+        "cebola": {
+            nome: "Cebola",
+            preparo: "crua",
+            energia: "39 kcal",
+            proteinas: "1,7 g",
+            carboidratos: "8,9 g",
+            gorduras: "0,1 g",
+            fibras: "2,2 g"
+        },
+        "gengibre": {
+            nome: "Gengibre",
+            preparo: "cru",
+            energia: "46 kcal",
+            proteinas: "1,5 g",
+            carboidratos: "9,4 g",
+            gorduras: "0,3 g",
+            fibras: "2,0 g"
+        }
+    };
+
+    const busca = document.getElementById("busca-produtos");
+    const cartoes = Array.from(document.querySelectorAll(".produto-card"));
+    const botoesFiltro = document.querySelectorAll("[data-filtro]");
+    const contador = document.getElementById("contador-produtos");
+    const conteudoNutricao = document.getElementById("conteudo-nutricional");
+    const secaoNutricao = document.getElementById("informacoes-nutricionais");
+    const grade = document.getElementById("grade-produtos");
+
+    let filtroAtual = "todos";
+
+    function normalizar(texto) {
+        return texto
+            .toLocaleLowerCase("pt-BR")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function filtrarProdutos() {
+        const termo = normalizar(busca.value.trim());
+        let quantidadeVisivel = 0;
+
+        cartoes.forEach(function (cartao) {
+            const imagem = cartao.querySelector("img");
+            const texto = normalizar(
+                cartao.textContent + " " + (imagem ? imagem.alt : "")
+            );
+
+            const categoriaCorreta =
+                filtroAtual === "todos" ||
+                cartao.dataset.categoria === filtroAtual;
+
+            const textoCorreto = texto.includes(termo);
+            const mostrar = categoriaCorreta && textoCorreto;
+
+            cartao.hidden = !mostrar;
+
+            if (mostrar) {
+                quantidadeVisivel++;
+            }
+        });
+
+        contador.textContent = quantidadeVisivel === 1
+            ? "1 produto encontrado."
+            : quantidadeVisivel + " produtos encontrados.";
+
+        let aviso = document.getElementById("aviso-sem-resultados");
+
+        if (quantidadeVisivel === 0) {
+            if (!aviso) {
+                aviso = document.createElement("p");
+                aviso.id = "aviso-sem-resultados";
+                aviso.className = "sem-resultados";
+                aviso.textContent =
+                    "Nenhum produto encontrado. Tente outro nome ou categoria.";
+                grade.appendChild(aviso);
+            }
+        } else if (aviso) {
+            aviso.remove();
+        }
+    }
+
+    botoesFiltro.forEach(function (botao) {
+        botao.addEventListener("click", function () {
+            filtroAtual = botao.dataset.filtro;
+
+            botoesFiltro.forEach(function (outro) {
+                outro.classList.toggle("ativo", outro === botao);
+            });
+
+            filtrarProdutos();
+        });
+    });
+
+    busca.addEventListener("input", filtrarProdutos);
+
+    function mostrarNutricao(chave) {
+        const alimento = dadosNutricionais[chave];
+
+        if (!alimento) {
+            conteudoNutricao.textContent =
+                "As informações nutricionais deste produto ainda não foram cadastradas.";
+        } else {
+            const titulo = document.createElement("h3");
+            titulo.textContent = alimento.nome;
+
+            const preparo = document.createElement("p");
+            preparo.textContent =
+                "Valores aproximados por 100 g. Alimento " +
+                alimento.preparo + ".";
+
+            const gradeNutricao = document.createElement("dl");
+            gradeNutricao.className = "nutricao-grade";
+
+            const linhas = [
+                ["Energia", alimento.energia],
+                ["Proteínas", alimento.proteinas],
+                ["Carboidratos", alimento.carboidratos],
+                ["Gorduras totais", alimento.gorduras],
+                ["Fibras alimentares", alimento.fibras]
+            ];
+
+            linhas.forEach(function (linha) {
+                const item = document.createElement("div");
+                item.className = "nutricao-item";
+
+                const rotulo = document.createElement("dt");
+                rotulo.textContent = linha[0];
+
+                const valor = document.createElement("dd");
+                valor.textContent = linha[1];
+
+                item.append(rotulo, valor);
+                gradeNutricao.appendChild(item);
+            });
+
+            conteudoNutricao.replaceChildren(
+                titulo,
+                preparo,
+                gradeNutricao
+            );
+        }
+
+        secaoNutricao.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+    document.querySelectorAll("[data-nutricao]").forEach(function (botao) {
+        botao.addEventListener("click", function () {
+            mostrarNutricao(botao.dataset.nutricao);
+        });
+    });
+
+    filtrarProdutos();
+})();
+</script>
+
+</body>
+</html>

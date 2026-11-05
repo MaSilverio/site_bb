@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a história do Grupo BB Agronegócios, fundado em 2010, sua trajetória no agronegócio e sua atuação em diferentes regiões do Brasil.">
+    <meta name="theme-color" content="#183d2b">
+    <title>Nossa história | Grupo BB Agronegócios</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="ESTILO/estilo.css">
+
+    <style>
+        body.pagina-empresa {
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--preto, #18201b);
+            background: var(--branco, #fff);
+            font-family: "DM Sans", Arial, sans-serif;
+        }
+
+        body.pagina-empresa *,
+        body.pagina-empresa *::before,
+        body.pagina-empresa *::after {
+            box-sizing: border-box;
+        }
+
+        body.pagina-empresa img,
+        body.pagina-empresa video {
+            display: block;
+            max-width: 100%;
+        }
+
+        body.pagina-empresa main {
+            display: block;
+            width: 100%;
+            max-width: none;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body.pagina-empresa main > section {
+            width: 100%;
+            max-width: none;
+            min-width: 0;
+            margin: 0;
+        }
+
+        body.pagina-empresa .container {
+            width: min(var(--largura, 1240px), calc(100% - 48px));
+            max-width: var(--largura, 1240px);
+            min-width: 0;
+            margin-inline: auto;
+        }
+
+        /* CABEÇALHO */
+
+        body.pagina-empresa > header.cabecalho {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 18px !important;
+            width: 100% !important;
+            min-height: 82px !important;
+            margin: 0 !important;
+            padding: 8px clamp(16px, 4.5vw, 58px) !important;
+            background: #10271d !important;
+            border-bottom: 1px solid rgba(255,255,255,.10) !important;
+            box-shadow: 0 5px 18px rgba(0,0,0,.08);
+            backdrop-filter: blur(14px);
+        }
+
+        body.pagina-empresa > header.cabecalho .marca {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 10px !important;
+            flex: 0 0 auto !important;
+            width: 210px !important;
+            min-height: 62px !important;
+            padding: 7px 12px !important;
+            color: #183d2b !important;
+            background: #f4f5f4 !important;
+            border-radius: 10px !important;
+            text-decoration: none !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .marca img {
+            width: 48px !important;
+            height: 46px !important;
+            flex: 0 0 48px !important;
+            object-fit: contain !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .marca span,
+        body.pagina-empresa > header.cabecalho .marca strong {
+            display: block !important;
+            color: #183d2b !important;
+            font-family: "DM Sans", Arial, sans-serif !important;
+            font-size: .88rem !important;
+            font-weight: 800 !important;
+            line-height: 1.25 !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .menu {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            flex: 1 1 auto !important;
+            flex-wrap: nowrap !important;
+            gap: 3px !important;
+            min-width: 0 !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .menu a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 38px !important;
+            margin: 0 !important;
+            padding: 8px 9px !important;
+            color: rgba(255,255,255,.9) !important;
+            background: transparent !important;
+            border-radius: 7px !important;
+            font-size: .77rem !important;
+            font-weight: 700 !important;
+            line-height: 1.3 !important;
+            white-space: nowrap !important;
+            text-decoration: none !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .menu a:hover,
+        body.pagina-empresa > header.cabecalho .menu a.ativo,
+        body.pagina-empresa > header.cabecalho .menu a[aria-current="page"] {
+            color: #eadab6 !important;
+            background: rgba(255,255,255,.1) !important;
+        }
+
+        body.pagina-empresa > header.cabecalho .menu-toggle {
+            display: none !important;
+        }
+
+        /* CAPA */
+
+        body.pagina-empresa > main > .pagina-topo {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 310px;
+            padding: 58px 0;
+            overflow: hidden;
+            color: #fff;
+            background: linear-gradient(110deg, #10271d 0%, #183d2b 66%, #285c3f 100%);
+            border-bottom: 4px solid #c5a15c;
+        }
+
+        body.pagina-empresa > main > .pagina-topo::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            right: 4%;
+            bottom: -210px;
+            width: clamp(260px, 31vw, 420px);
+            aspect-ratio: 1;
+            border: 1px solid rgba(255,255,255,.11);
+            border-radius: 50%;
+            box-shadow: 0 0 0 31px rgba(255,255,255,.025),
+                        0 0 0 63px rgba(255,255,255,.02);
+            pointer-events: none;
+        }
+
+        body.pagina-empresa > main > .pagina-topo > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        body.pagina-empresa .sobretitulo {
+            display: inline-block;
+            margin: 0 0 12px;
+            color: #b18b48;
+            font-size: .73rem;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: .16em;
+        }
+
+        body.pagina-empresa > main > .pagina-topo .sobretitulo {
+            color: #eadab6;
+        }
+
+        body.pagina-empresa > main > .pagina-topo h1 {
+            max-width: 900px;
+            margin: 0 0 16px;
+            color: #fff;
+            font-family: "Manrope", Arial, sans-serif;
+            font-size: clamp(2.25rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -.04em;
+            overflow-wrap: anywhere;
+        }
+
+        body.pagina-empresa > main > .pagina-topo p {
+            max-width: 760px;
+            margin: 0;
+            color: rgba(255,255,255,.9);
+            font-size: clamp(1rem, 1.5vw, 1.12rem);
+            line-height: 1.75;
+        }
+
+        /* SEÇÕES */
+
+        body.pagina-empresa .empresa-secao {
+            width: 100%;
+            margin: 0;
+            padding: clamp(48px, 6vw, 84px) 0;
+            background: #fff;
+        }
+
+        body.pagina-empresa .empresa-secao.secao-alternativa {
+            background: #f5f7f4;
+        }
+
+        body.pagina-empresa .empresa-secao > .container,
+        body.pagina-empresa > footer.rodape .rodape-conteudo {
+            width: min(1240px, calc(100% - 48px));
+            max-width: 1240px;
+            margin-inline: auto;
+        }
+
+        body.pagina-empresa .empresa-introducao {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center;
+            gap: clamp(28px, 5vw, 64px);
+        }
+
+        body.pagina-empresa .empresa-texto,
+        body.pagina-empresa .empresa-imagem-principal {
+            min-width: 0;
+        }
+
+        body.pagina-empresa .empresa-texto h2,
+        body.pagina-empresa .cabecalho-secao h2,
+        body.pagina-empresa .empresa-encerramento h2 {
+            margin: 0 0 16px;
+            color: var(--verde, #183d2b);
+            font-family: "Manrope", Arial, sans-serif;
+            font-size: clamp(1.65rem, 3vw, 2.5rem);
+            line-height: 1.22;
+            letter-spacing: -.025em;
+            overflow-wrap: anywhere;
+        }
+
+        body.pagina-empresa .empresa-texto p,
+        body.pagina-empresa .cabecalho-secao p,
+        body.pagina-empresa .empresa-etapa p,
+        body.pagina-empresa .empresa-cartao-conteudo p,
+        body.pagina-empresa .empresa-galeria figcaption span,
+        body.pagina-empresa .empresa-encerramento p {
+            color: var(--texto, #59645c);
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        body.pagina-empresa .empresa-texto p {
+            margin: 0 0 16px;
+        }
+
+        body.pagina-empresa .empresa-imagem-principal {
+            margin: 0;
+            padding: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--borda, #e1e7e0);
+            border-radius: var(--raio, 16px);
+            box-shadow: var(--sombra, 0 12px 32px rgba(16,40,28,.08));
+        }
+
+        body.pagina-empresa .empresa-imagem-principal img {
+            width: 100%;
+            max-height: 460px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #eef1ed;
+        }
+
+        body.pagina-empresa .empresa-imagem-principal figcaption {
+            margin: 10px 4px 1px;
+            color: #788078;
+            font-size: .82rem;
+            line-height: 1.6;
+        }
+
+        body.pagina-empresa .cabecalho-secao {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 36px;
+            text-align: center;
+        }
+
+        body.pagina-empresa .cabecalho-secao h2 {
+            margin-bottom: 12px;
+        }
+
+        body.pagina-empresa .cabecalho-secao p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* BOTÕES */
+
+        body.pagina-empresa .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 46px;
+            max-width: 100%;
+            margin: 4px 0 0;
+            padding: 12px 20px;
+            color: #fff;
+            background: var(--verde, #183d2b);
+            border: 1px solid var(--verde, #183d2b);
+            border-radius: 8px;
+            font-size: .9rem;
+            font-weight: 800;
+            line-height: 1.35;
+            text-align: center;
+            text-decoration: none;
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        body.pagina-empresa .botao:hover {
+            color: #fff;
+            background: var(--verde-medio, #2b6544);
+            transform: translateY(-1px);
+        }
+
+        body.pagina-empresa .botao-claro {
+            color: var(--verde, #183d2b);
+            background: #fff;
+            border-color: #fff;
+        }
+
+        body.pagina-empresa .botao-claro:hover {
+            color: var(--verde, #183d2b);
+            background: #eadab6;
+            border-color: #eadab6;
+        }
+
+        /* CARTÕES E LINHA DO TEMPO */
+
+        body.pagina-empresa .empresa-linha-tempo,
+        body.pagina-empresa .empresa-cartoes,
+        body.pagina-empresa .empresa-galeria {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 22px;
+            width: 100%;
+        }
+
+        body.pagina-empresa .empresa-etapa {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 0;
+            margin: 0;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid var(--borda, #e1e7e0);
+            border-top: 3px solid #c5a15c;
+            border-radius: var(--raio, 16px);
+            box-shadow: 0 5px 20px rgba(16,40,28,.035);
+        }
+
+        body.pagina-empresa .empresa-numero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            margin-bottom: 20px;
+            color: var(--verde, #183d2b);
+            background: #edf3ee;
+            border-left: 3px solid #c5a15c;
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        body.pagina-empresa .empresa-etapa h3,
+        body.pagina-empresa .empresa-cartao-conteudo h3 {
+            margin: 0 0 10px;
+            color: var(--verde, #183d2b);
+            font-size: 1.18rem;
+            line-height: 1.3;
+            overflow-wrap: anywhere;
+        }
+
+        body.pagina-empresa .empresa-etapa p,
+        body.pagina-empresa .empresa-cartao-conteudo p {
+            margin: 0 0 16px;
+        }
+
+        body.pagina-empresa .empresa-etapa a,
+        body.pagina-empresa .empresa-cartao-conteudo a {
+            display: inline-block;
+            margin-top: auto;
+            padding-top: 8px;
+            color: var(--verde-medio, #2b6544);
+            font-size: .88rem;
+            font-weight: 800;
+            line-height: 1.5;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        body.pagina-empresa .empresa-cartao {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--borda, #e1e7e0);
+            border-radius: var(--raio, 16px);
+            box-shadow: 0 5px 20px rgba(16,40,28,.035);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        body.pagina-empresa .empresa-cartao:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra, 0 12px 32px rgba(16,40,28,.08));
+        }
+
+        body.pagina-empresa .empresa-foto {
+            position: relative;
+            width: 100%;
+            height: clamp(180px, 18vw, 230px);
+            overflow: hidden;
+            background: #eef1ed;
+        }
+
+        body.pagina-empresa .empresa-foto img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            margin: 0;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        body.pagina-empresa .empresa-foto img[hidden],
+        body.pagina-empresa .empresa-galeria img[hidden],
+        body.pagina-empresa .empresa-imagem-principal img[hidden] {
+            display: none !important;
+        }
+
+        body.pagina-empresa .empresa-foto:has(img[hidden])::after {
+            content: "Espaço para fotografia";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 15px;
+            color: #617265;
+            font-size: .82rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        body.pagina-empresa .empresa-cartao-conteudo {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 0;
+            padding: 22px;
+        }
+
+        body.pagina-empresa .empresa-observacao {
+            margin: 20px 0 0;
+            color: #788078;
+            font-size: .82rem;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        body.pagina-empresa .empresa-galeria figure {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            margin: 0;
+            padding: 11px;
+            background: #fff;
+            border: 1px solid var(--borda, #e1e7e0);
+            border-radius: var(--raio, 16px);
+            box-shadow: 0 5px 20px rgba(16,40,28,.035);
+        }
+
+        body.pagina-empresa .empresa-galeria img {
+            width: 100%;
+            height: clamp(180px, 18vw, 230px);
+            object-fit: cover;
+            border-radius: 10px;
+            background: #eef1ed;
+        }
+
+        body.pagina-empresa .empresa-galeria figcaption {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 14px 5px 3px;
+        }
+
+        body.pagina-empresa .empresa-galeria figcaption strong {
+            color: var(--verde, #183d2b);
+            font-size: 1rem;
+        }
+
+        body.pagina-empresa .empresa-galeria figcaption span {
+            font-size: .87rem;
+        }
+
+        /* VÍDEO */
+
+        body.pagina-empresa .empresa-video {
+            width: 100%;
+            max-width: 980px;
+            min-width: 0;
+            margin: 0 auto;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid var(--borda, #e1e7e0);
+            border-radius: var(--raio, 16px);
+            box-shadow: var(--sombra, 0 12px 32px rgba(16,40,28,.08));
+        }
+
+        body.pagina-empresa .empresa-video video {
+            width: 100%;
+            max-height: 550px;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #14251a;
+            border-radius: 9px;
+        }
+
+        /* ENCERRAMENTO E RODAPÉ */
+
+        body.pagina-empresa .empresa-encerramento {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+            align-items: center;
+            gap: 35px;
+        }
+
+        body.pagina-empresa .empresa-encerramento h2 {
+            margin-bottom: 12px;
+        }
+
+        body.pagina-empresa .empresa-encerramento p {
+            margin: 0;
+        }
+
+        body.pagina-empresa .empresa-links-finais {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        body.pagina-empresa .empresa-links-finais .botao {
+            width: 100%;
+            margin: 0;
+        }
+
+        body.pagina-empresa .empresa-link-texto {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 8px;
+            color: var(--verde-medio, #2b6544);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        body.pagina-empresa > footer.rodape {
+            display: block;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1100px) {
+            body.pagina-empresa > header.cabecalho {
+                gap: 10px !important;
+                padding-inline: 18px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .marca {
+                width: 185px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .marca img {
+                width: 42px !important;
+                flex-basis: 42px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .menu {
+                gap: 1px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .menu a {
+                padding-inline: 5px !important;
+                font-size: .70rem !important;
+            }
+
+            body.pagina-empresa .empresa-linha-tempo,
+            body.pagina-empresa .empresa-cartoes,
+            body.pagina-empresa .empresa-galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* MENU RESPONSIVO */
+
+        @media (max-width: 850px) {
+            body.pagina-empresa > header.cabecalho {
+                position: sticky !important;
+                min-height: 72px !important;
+                padding: 8px 14px !important;
+                gap: 10px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .marca {
+                width: auto !important;
+                max-width: calc(100% - 60px) !important;
+                min-height: 50px !important;
+                padding: 5px 9px !important;
+                gap: 8px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .marca img {
+                width: 38px !important;
+                height: 38px !important;
+                flex-basis: 38px !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .marca span,
+            body.pagina-empresa > header.cabecalho .marca strong {
+                font-size: .78rem !important;
+            }
+
+            body.pagina-empresa > header.cabecalho .menu-toggle {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex: 0 0 44px !important;
+                width: 44px !important;
+                height: 44px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                color: #fff !important;
+                background: transparent !important;
+                border: 1px solid rgba(255,255,255,.25) !important;
+                border-radius: 8px !important;
+                font-size: 1.55rem !important;
+                line-height: 1 !important;
+                cursor: pointer !important;
+            }
+
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu {
+                position: absolute !important;
+                top: 100% !important;
+                left: 6px !important;
+                right: 6px !important;
+                z-index: 1001 !important;
+                display: none !important;
+                width: auto !important;
+                max-height: calc(100vh - 100px) !important;
+                max-height: calc(100dvh - 100px) !important;
+                margin: 0 !important;
+                padding: 10px 12px 14px !important;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                flex: 0 0 auto !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 3px !important;
+                box-sizing: border-box !important;
+                background: #fff !important;
+                color: #183d2b !important;
+                border: 1px solid #e1e7e0 !important;
+                border-radius: 12px !important;
+                box-shadow: 0 14px 28px rgba(0,0,0,.12) !important;
+            }
+
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu.aberto,
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu.mostrar,
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu.ativo,
+            body.pagina-empresa > header.cabecalho:has(.menu-toggle[aria-expanded="true"]) nav#menu-principal.menu {
+                display: flex !important;
+            }
+
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu a {
+                display: flex !important;
+                justify-content: flex-start !important;
+                width: 100% !important;
+                min-height: 44px !important;
+                margin: 0 !important;
+                padding: 11px 14px !important;
+                color: #183d2b !important;
+                background: transparent !important;
+                border-radius: 7px !important;
+                font-size: .92rem !important;
+                line-height: 1.4 !important;
+                text-align: left !important;
+                white-space: normal !important;
+            }
+
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu a.ativo,
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu a[aria-current="page"] {
+                background: #e5eee7 !important;
+            }
+
+            body.pagina-empresa > header.cabecalho nav#menu-principal.menu a:hover {
+                background: #f0f4f0 !important;
+            }
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+            body.pagina-empresa .container,
+            body.pagina-empresa > main > .pagina-topo > .container,
+            body.pagina-empresa .empresa-secao > .container,
+            body.pagina-empresa > footer.rodape .rodape-conteudo {
+                width: calc(100% - 32px);
+            }
+
+            body.pagina-empresa > main > .pagina-topo {
+                min-height: 280px;
+                padding: 44px 0;
+            }
+
+            body.pagina-empresa > main > .pagina-topo h1 {
+                font-size: clamp(2rem, 9vw, 2.7rem);
+            }
+
+            body.pagina-empresa .empresa-introducao,
+            body.pagina-empresa .empresa-encerramento {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 28px;
+            }
+
+            body.pagina-empresa .empresa-linha-tempo,
+            body.pagina-empresa .empresa-cartoes,
+            body.pagina-empresa .empresa-galeria {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 16px;
+            }
+
+            body.pagina-empresa .empresa-secao {
+                padding: 42px 0;
+            }
+
+            body.pagina-empresa .empresa-etapa {
+                padding: 20px;
+            }
+
+            body.pagina-empresa .empresa-cartao-conteudo {
+                padding: 18px;
+            }
+
+            body.pagina-empresa .empresa-foto,
+            body.pagina-empresa .empresa-galeria img {
+                height: 220px;
+            }
+
+            body.pagina-empresa .empresa-video {
+                padding: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body.pagina-empresa *,
+            body.pagina-empresa *::before,
+            body.pagina-empresa *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+
+    <script src="JS/script.js" defer></script>
+</head>
+
+<body class="pagina-empresa">
+
+<header class="cabecalho">
+    <a class="marca" href="index.html" aria-label="Grupo BB Agronegócios - Início">
+        <img src="img/logo.png" alt="Logo do Grupo BB Agronegócios"
+             onerror="this.style.display='none'">
+        <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+    </a>
+
+    <button class="menu-toggle" type="button"
+            aria-label="Abrir menu"
+            aria-controls="menu-principal"
+            aria-expanded="false">☰</button>
+
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="historia.html" class="ativo" aria-current="page">Nossa história</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="safra.html">Safra</a>
+        <a href="sedes.html">Nossas sedes</a>
+        <a href="equipe.html">Equipe</a>
+        <a href="patrocinadores.html">Parceiros</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<main>
+    <section class="pagina-topo">
+        <div class="container">
+            <span class="sobretitulo">QUEM SOMOS</span>
+            <h1>Uma história construída no campo</h1>
+            <p>Desde 2010, o Grupo BB Agronegócios trabalha com produção, comércio, transporte e beneficiamento de produtos agrícolas, conectando produtores e mercados.</p>
+        </div>
+    </section>
+
+    <section class="empresa-secao">
+        <div class="container empresa-introducao">
+            <div class="empresa-texto">
+                <span class="sobretitulo">NOSSA ORIGEM</span>
+                <h2>Uma união que deu início à nossa trajetória</h2>
+                <p>O Grupo BB Agronegócios foi fundado em 2010, a partir da união dos produtores rurais Divino Bueno, Edilson Lodi, Michel Costa e Nelson Nampo. A iniciativa marcou o início de um trabalho conjunto no setor agrícola.</p>
+                <p>A empresa começou com atuação principalmente ligada à batata. Com o desenvolvimento das atividades, ampliou seu portfólio e passou a trabalhar com uma variedade maior de produtos agrícolas, atendendo diferentes necessidades do mercado.</p>
+                <p>Ao longo dessa trajetória, a empresa também ampliou seu relacionamento comercial: além dos mercados de abastecimento das capitais, passou a atender grandes redes de supermercados e outros clientes do setor.</p>
+                <a href="produtos.html" class="botao">Conheça nossos produtos</a>
+            </div>
+
+            <figure class="empresa-imagem-principal">
+                <img src="img/empresa.jpg"
+                     alt="Instalações do Grupo BB Agronegócios"
+                     loading="lazy"
+                     onerror="this.hidden = true">
+                
+            </figure>
+        </div>
+    </section>
+
+    <section class="empresa-secao secao-alternativa">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">NOSSA TRAJETÓRIA</span>
+                <h2>Etapas do desenvolvimento da empresa</h2>
+                <p>Uma trajetória marcada pela união, pela ampliação das atividades e pela expansão do atendimento comercial.</p>
+            </div>
+
+            <div class="empresa-linha-tempo">
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">01</span>
+                    <span class="sobretitulo">2010</span>
+                    <h3>Fundação</h3>
+                    <p>A união dos produtores rurais Divino Bueno, Edilson Lodi, Michel Costa e Nelson Nampo deu origem ao Grupo BB Agronegócios.</p>
+                </article>
+
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">02</span>
+                    <span class="sobretitulo">AMPLIAÇÃO</span>
+                    <h3>Mais produtos e atividades</h3>
+                    <p>A atuação, inicialmente concentrada principalmente em batatas, foi ampliada para outros produtos e atividades do agronegócio.</p>
+                </article>
+
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">03</span>
+                    <span class="sobretitulo">EXPANSÃO</span>
+                    <h3>Novos mercados</h3>
+                    <p>A empresa expandiu sua presença comercial e passou a atender clientes em diferentes regiões do Brasil. Também iniciou exportações por meio da filial de Boa Vista.</p>
+                    <a href="sedes.html">Conheça as sedes</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="empresa-secao">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">NOSSA ATUAÇÃO</span>
+                <h2>Do campo ao mercado</h2>
+                <p>O Grupo BB Agronegócios reúne diferentes atividades para atender às demandas do setor agrícola.</p>
+            </div>
+
+            <div class="empresa-cartoes">
+                <article class="empresa-cartao">
+                    <div class="empresa-foto">
+                        <img src="img/capa-lavoura.jpg"
+                             alt="Lavoura agrícola"
+                             loading="lazy"
+                             onerror="this.hidden = true">
+                    </div>
+                    <div class="empresa-cartao-conteudo">
+                        <span class="sobretitulo">01 / PRODUÇÃO</span>
+                        <h3>Produção agrícola</h3>
+                        <p>Entre os produtos cultivados pela empresa estão batata, morango, abacate, cebola, soja, milho e batata-doce, além de outros produtos agrícolas.</p>
+                        <a href="safra.html">Conheça as safras</a>
+                    </div>
+                </article>
+
+                <article class="empresa-cartao">
+                    <div class="empresa-foto">
+                        <img src="img/fabrica.jpg"
+                             alt="Estrutura de beneficiamento"
+                             loading="lazy"
+                             onerror="this.hidden = true">
+                    </div>
+                    <div class="empresa-cartao-conteudo">
+                        <span class="sobretitulo">02 / BENEFICIAMENTO</span>
+                        <h3>Preparação dos produtos</h3>
+                        <p>A empresa realiza o beneficiamento de produtos agrícolas, incluindo batatas e abacates, entre outros.</p>
+                        <a href="produtos.html">Conheça os produtos</a>
+                    </div>
+                </article>
+
+                <article class="empresa-cartao">
+                    <div class="empresa-foto">
+                        <img src="img/colheita.jpg"
+                             alt="Produtos e atividades agrícolas"
+                             loading="lazy"
+                             onerror="this.hidden = true">
+                    </div>
+                    <div class="empresa-cartao-conteudo">
+                        <span class="sobretitulo">03 / COMÉRCIO E TRANSPORTE</span>
+                        <h3>Conexão com os mercados</h3>
+                        <p>Além de comercializar produtos próprios e de terceiros, a empresa realiza o transporte de mercadorias para atender às necessidades de seus clientes.</p>
+                        <a href="contato.html">Entre em contato</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="empresa-secao secao-alternativa">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">NOSSA MISSÃO, VISÃO E VALORES</span>
+                <h2>O que orienta nosso trabalho</h2>
+                <p>Princípios que fazem parte da forma como a empresa busca atender seus clientes e desenvolver suas atividades.</p>
+            </div>
+
+            <div class="empresa-linha-tempo">
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">01</span>
+                    <h3>Missão</h3>
+                    <p>Produzir e comercializar alimentos de qualidade de forma sustentável, atendendo às diferentes regiões do Brasil.</p>
+                </article>
+
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">02</span>
+                    <h3>Visão</h3>
+                    <p>Expandir a atuação da empresa para o mercado internacional, dando continuidade às iniciativas de exportação já iniciadas.</p>
+                </article>
+
+                <article class="empresa-etapa">
+                    <span class="empresa-numero">03</span>
+                    <h3>Valores</h3>
+                    <p>Honestidade, excelência, preço justo e qualidade dos produtos orientam o compromisso da empresa com seus clientes.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="empresa-secao">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">PRESENÇA E EXPANSÃO</span>
+                <h2>Atuação em diferentes mercados</h2>
+                <p>O Grupo BB Agronegócios atende clientes em diversas regiões do país e iniciou exportações a partir da filial de Boa Vista.</p>
+            </div>
+
+            <div class="empresa-galeria">
+                <figure>
+                    <img src="img/industria.jpg"
+                         alt="Estrutura empresarial"
+                         loading="lazy"
+                         onerror="this.hidden = true">
+                    <figcaption>
+                        <strong>Estrutura da empresa</strong>
+                        <span>Espaço para fotografia real das instalações.</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/empresa.jpg"
+                         alt="Registro das atividades da empresa"
+                         loading="lazy"
+                         onerror="this.hidden = true">
+                    <figcaption>
+                        <strong>Nossa trajetória</strong>
+                        <span>Espaço para registros reais da história da empresa.</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/legumes.jpg"
+                         alt="Produtos agrícolas comercializados"
+                         loading="lazy"
+                         onerror="this.hidden = true">
+                    <figcaption>
+                        <strong>Produtos agrícolas</strong>
+                        <span>Espaço para imagens dos produtos comercializados.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <section class="empresa-secao">
+        <div class="container empresa-encerramento">
+            <div>
+                <span class="sobretitulo">GRUPO BB AGRONEGÓCIOS</span>
+                <h2>Uma trajetória que continua crescendo</h2>
+                <p>Com atividades de produção, comércio, transporte e beneficiamento, o Grupo BB Agronegócios busca oferecer alimentos de qualidade e manter parcerias com clientes de diferentes regiões do Brasil.</p>
+            </div>
+
+            <div class="empresa-links-finais">
+                <a href="produtos.html" class="botao">Ver produtos</a>
+                <a href="safra.html" class="botao botao-claro">Conhecer as safras</a>
+                <a href="contato.html" class="empresa-link-texto">Falar com a empresa</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-conteudo">
+        <div>
+            <a class="marca marca-rodape" href="index.html">
+                <img src="img/logo.png" alt=""
+                     onerror="this.style.display='none'">
+                <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+            </a>
+            <p>Compromisso com o campo, qualidade e parceria.</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="produtos.html">Produtos</a>
+            <a href="sedes.html">Nossas sedes</a>
+        </div>
+
+        <p class="rodape-copyright">
+            © <span id="ano-atual">2026</span> Grupo BB Agronegócios.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

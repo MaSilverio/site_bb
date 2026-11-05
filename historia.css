@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+body.pagina-empresa,
+body.pagina-empresa * {
+    box-sizing: border-box;
+}
+
+body.pagina-empresa {
+    margin: 0;
+    overflow-x: hidden;
+    color: #18201b;
+    background: #fff;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.pagina-empresa h1,
+body.pagina-empresa h2,
+body.pagina-empresa h3,
+body.pagina-empresa p,
+body.pagina-empresa figure {
+    margin-top: 0;
+}
+
+body.pagina-empresa h1,
+body.pagina-empresa h2,
+body.pagina-empresa h3 {
+    font-family: 'Manrope', 'DM Sans', Arial, sans-serif;
+    line-height: 1.2;
+}
+
+body.pagina-empresa p {
+    margin-bottom: 16px;
+}
+
+body.pagina-empresa a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body.pagina-empresa img,
+body.pagina-empresa video {
+    display: block;
+    max-width: 100%;
+}
+
+body.pagina-empresa button {
+    font: inherit;
+    cursor: pointer;
+}
+
+body.pagina-empresa a:focus-visible,
+body.pagina-empresa button:focus-visible {
+    outline: 3px solid #c5a15c;
+    outline-offset: 3px;
+}
+
+/* CABEÇALHO E MENU */
+
+body.pagina-empresa .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    min-height: 76px;
+    margin: 0;
+    padding: 10px max(24px, calc((100vw - 1120px) / 2));
+    background: #10281c;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 6px 20px rgba(10,31,20,.08);
+}
+
+body.pagina-empresa .marca {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 7px 12px;
+    color: #183d2b;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+body.pagina-empresa .marca img {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 40px;
+    object-fit: contain;
+    background: #fff;
+}
+
+body.pagina-empresa .marca span {
+    display: flex;
+    flex-direction: column;
+    color: #183d2b;
+    font-family: 'Manrope', Arial, sans-serif;
+    font-size: .82rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: .02em;
+}
+
+body.pagina-empresa .marca b {
+    color: #183d2b;
+    font-size: .82rem;
+}
+
+body.pagina-empresa .marca small {
+    margin-top: 3px;
+    color: #94732f;
+    font-size: .61rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+body.pagina-empresa .menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-left: auto;
+}
+
+body.pagina-empresa .menu a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 8px 9px;
+    color: rgba(255,255,255,.9);
+    background: transparent;
+    border-radius: 7px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: .73rem;
+    font-weight: 700;
+    line-height: 1.35;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color .2s ease, background .2s ease;
+}
+
+body.pagina-empresa .menu a:hover,
+body.pagina-empresa .menu a:focus-visible {
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+body.pagina-empresa .menu a.ativo,
+body.pagina-empresa .menu a[aria-current='page'] {
+    color: #eadab6;
+    background: rgba(255,255,255,.1);
+}
+
+body.pagina-empresa .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 8px;
+    font-size: 1.25rem;
+}
+
+/* TÍTULO PRINCIPAL */
+
+body.pagina-empresa main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+body.pagina-empresa .container {
+    width: min(1120px, calc(100% - 48px));
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+body.pagina-empresa .pagina-topo {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: clamp(68px, 7vw, 96px) 0;
+    color: #fff;
+    background: linear-gradient(115deg, #10281c 0%, #183d2b 65%, #285c3f 100%);
+    border-bottom: 3px solid #c5a15c;
+}
+
+body.pagina-empresa .pagina-topo::after {
+    position: absolute;
+    z-index: -1;
+    right: -90px;
+    bottom: -240px;
+    width: 390px;
+    height: 390px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 50%;
+    box-shadow: 0 0 0 34px rgba(255,255,255,.025), 0 0 0 72px rgba(255,255,255,.02);
+    content: '';
+    pointer-events: none;
+}
+
+body.pagina-empresa .pagina-topo > .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.pagina-empresa .pagina-topo .sobretitulo {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #eadab6;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+body.pagina-empresa .pagina-topo h1 {
+    max-width: 800px;
+    margin: 12px 0 16px;
+    color: #fff;
+    font-family: 'Manrope', 'DM Sans', Arial, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.7rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -.04em;
+}
+
+body.pagina-empresa .pagina-topo p {
+    max-width: 650px;
+    margin: 0;
+    color: rgba(255,255,255,.86);
+    font-size: clamp(.97rem, 1.5vw, 1.08rem);
+    line-height: 1.8;
+}
+
+/* SEÇÕES DA HISTÓRIA */
+
+body.pagina-empresa .empresa-secao {
+    width: 100%;
+    margin: 0;
+    padding: clamp(48px, 6vw, 78px) 0;
+}
+
+body.pagina-empresa .empresa-introducao {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 58px);
+}
+
+body.pagina-empresa .empresa-texto {
+    min-width: 0;
+}
+
+body.pagina-empresa .empresa-texto .sobretitulo,
+body.pagina-empresa .cabecalho-secao .sobretitulo,
+body.pagina-empresa .empresa-cartao-conteudo .sobretitulo {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #98762f;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+}
+
+body.pagina-empresa .empresa-texto h2,
+body.pagina-empresa .cabecalho-secao h2,
+body.pagina-empresa .empresa-encerramento h2 {
+    margin: 0 0 16px;
+    color: #183d2b;
+    font-family: 'Manrope', 'DM Sans', Arial, sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.45rem);
+    line-height: 1.2;
+    letter-spacing: -.025em;
+}
+
+body.pagina-empresa .empresa-texto p,
+body.pagina-empresa .cabecalho-secao p,
+body.pagina-empresa .empresa-etapa p,
+body.pagina-empresa .empresa-cartao-conteudo p,
+body.pagina-empresa .empresa-encerramento p {
+    color: #59645c;
+    font-size: .95rem;
+    line-height: 1.85;
+}
+
+body.pagina-empresa .empresa-texto p {
+    margin-bottom: 16px;
+}
+
+body.pagina-empresa .empresa-texto .botao {
+    margin-top: 6px;
+}
+
+body.pagina-empresa .empresa-foto-principal {
+    min-width: 0;
+    margin: 0;
+    padding: 12px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e7e0;
+    border-radius: 15px;
+    box-shadow: 0 12px 32px rgba(16,40,28,.09);
+}
+
+body.pagina-empresa .empresa-foto-principal img {
+    width: 100%;
+    height: 350px;
+    max-height: 420px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #edf1ed;
+}
+
+body.pagina-empresa .empresa-foto-principal figcaption {
+    padding: 12px 4px 1px;
+    color: #788078;
+    font-size: .8rem;
+    line-height: 1.6;
+}
+
+body.pagina-empresa .secao-alternativa {
+    background: #f5f7f4;
+}
+
+body.pagina-empresa .cabecalho-secao {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+body.pagina-empresa .cabecalho-secao p {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+body.pagina-empresa .empresa-etapas,
+body.pagina-empresa .empresa-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+body.pagina-empresa .empresa-etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 25px 23px;
+    background: #fff;
+    border: 1px solid #e1e7e0;
+    border-top: 3px solid #c5a15c;
+    border-radius: 12px;
+    box-shadow: 0 7px 22px rgba(16,40,28,.045);
+}
+
+body.pagina-empresa .empresa-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    color: #183d2b;
+    background: #edf3ee;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+body.pagina-empresa .empresa-etapa h3,
+body.pagina-empresa .empresa-cartao-conteudo h3 {
+    margin: 0 0 10px;
+    color: #183d2b;
+    font-family: 'Manrope', 'DM Sans', Arial, sans-serif;
+    font-size: 1.17rem;
+    line-height: 1.3;
+}
+
+body.pagina-empresa .empresa-etapa p {
+    margin: 0 0 10px;
+}
+
+body.pagina-empresa .empresa-etapa a,
+body.pagina-empresa .empresa-cartao-conteudo a {
+    margin-top: auto;
+    color: #235b3b;
+    font-size: .85rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+body.pagina-empresa .empresa-cartao {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e7e0;
+    border-radius: 13px;
+    box-shadow: 0 7px 22px rgba(16,40,28,.045);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body.pagina-empresa .empresa-cartao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(16,40,28,.1);
+}
+
+body.pagina-empresa .empresa-foto {
+    width: 100%;
+    height: 215px;
+    overflow: hidden;
+    background: #edf1ed;
+}
+
+body.pagina-empresa .empresa-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease;
+}
+
+body.pagina-empresa .empresa-cartao:hover .empresa-foto img {
+    transform: scale(1.025);
+}
+
+body.pagina-empresa .empresa-cartao-conteudo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 21px;
+}
+
+body.pagina-empresa .empresa-cartao-conteudo p {
+    margin: 0 0 18px;
+    font-size: .9rem;
+}
+
+body.pagina-empresa .empresa-video {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #e1e7e0;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(16,40,28,.08);
+}
+
+body.pagina-empresa .empresa-video video {
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #14251a;
+    border-radius: 8px;
+}
+
+body.pagina-empresa .empresa-encerramento {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+    align-items: center;
+    gap: 32px;
+    margin-top: 38px;
+    padding-top: 32px;
+    border-top: 1px solid #dce4dc;
+}
+
+body.pagina-empresa .empresa-encerramento h2 {
+    margin-bottom: 12px;
+}
+
+body.pagina-empresa .empresa-encerramento p {
+    margin: 0;
+}
+
+body.pagina-empresa .empresa-final-botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+body.pagina-empresa .empresa-final-botoes .botao {
+    width: 100%;
+}
+
+body.pagina-empresa .empresa-link-texto {
+    padding: 8px;
+    color: #235b3b;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* BOTÕES */
+
+body.pagina-empresa .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px;
+    max-width: 100%;
+    padding: 12px 19px;
+    color: #fff;
+    background: #183d2b;
+    border: 1px solid #183d2b;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+body.pagina-empresa .botao:hover {
+    color: #fff;
+    background: #2b6544;
+    transform: translateY(-1px);
+}
+
+body.pagina-empresa .botao-claro {
+    color: #183d2b;
+    background: #fff;
+    border-color: #fff;
+}
+
+body.pagina-empresa .botao-claro:hover {
+    color: #183d2b;
+    background: #eadab6;
+    border-color: #eadab6;
+}
+
+/* RODAPÉ */
+
+body.pagina-empresa .rodape {
+    margin: 0;
+    padding: 40px 0 22px;
+    color: #fff;
+    background: #10281c;
+}
+
+body.pagina-empresa .rodape-conteudo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 22px 34px;
+}
+
+body.pagina-empresa .rodape-conteudo > div b {
+    color: #fff;
+    font-family: 'Manrope', Arial, sans-serif;
+    font-size: .9rem;
+    letter-spacing: .04em;
+}
+
+body.pagina-empresa .rodape p {
+    margin: 8px 0 0;
+    color: rgba(255,255,255,.72);
+    font-size: .85rem;
+}
+
+body.pagina-empresa .rodape-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+}
+
+body.pagina-empresa .rodape-links a {
+    color: rgba(255,255,255,.86);
+    font-size: .84rem;
+}
+
+body.pagina-empresa .rodape-links a:hover {
+    color: #eadab6;
+}
+
+body.pagina-empresa .rodape .rodape-copyright {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 8px 0 0;
+    padding-top: 16px;
+    color: rgba(255,255,255,.58);
+    border-top: 1px solid rgba(255,255,255,.15);
+    font-size: .75rem;
+}
+
+/* TABLETS */
+
+@media (max-width: 1100px) {
+    body.pagina-empresa .cabecalho {
+        padding-inline: 20px;
+    }
+
+    body.pagina-empresa .menu-toggle {
+        display: inline-flex;
+    }
+
+    body.pagina-empresa .menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 16px;
+        right: 16px;
+        z-index: 1100;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        background: #fff;
+        border: 1px solid #e1e7e0;
+        border-radius: 12px;
+        box-shadow: 0 18px 44px rgba(16,40,28,.14);
+    }
+
+    body.pagina-empresa .menu.aberto,
+    body.pagina-empresa .menu.ativo {
+        display: flex;
+    }
+
+    body.pagina-empresa .menu a {
+        width: 100%;
+        min-height: 40px;
+        padding: 11px 13px;
+        color: #183d2b;
+        font-size: .9rem;
+        white-space: normal;
+    }
+
+    body.pagina-empresa .menu a:hover,
+    body.pagina-empresa .menu a.ativo,
+    body.pagina-empresa .menu a[aria-current='page'] {
+        color: #183d2b;
+        background: #edf3ee;
+    }
+
+    body.pagina-empresa .empresa-etapas,
+    body.pagina-empresa .empresa-cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    body.pagina-empresa .cabecalho {
+        min-height: 68px;
+        padding: 9px 14px;
+    }
+
+    body.pagina-empresa .marca {
+        gap: 7px;
+        padding: 6px 8px;
+    }
+
+    body.pagina-empresa .marca img {
+        width: 36px;
+        height: 34px;
+    }
+
+    body.pagina-empresa .marca span,
+    body.pagina-empresa .marca b {
+        font-size: .72rem;
+    }
+
+    body.pagina-empresa .marca small {
+        font-size: .54rem;
+    }
+
+    body.pagina-empresa .container,
+    body.pagina-empresa .pagina-topo > .container,
+    body.pagina-empresa .empresa-secao > .container {
+        width: calc(100% - 32px);
+    }
+
+    body.pagina-empresa .pagina-topo {
+        padding: 52px 0 58px;
+    }
+
+    body.pagina-empresa .pagina-topo h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    body.pagina-empresa .empresa-secao {
+        padding: 42px 0;
+    }
+
+    body.pagina-empresa .empresa-introducao,
+    body.pagina-empresa .empresa-encerramento {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    body.pagina-empresa .empresa-foto-principal img {
+        height: auto;
+        max-height: 360px;
+        aspect-ratio: 4 / 3;
+    }
+
+    body.pagina-empresa .empresa-etapas,
+    body.pagina-empresa .empresa-cartoes {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    body.pagina-empresa .empresa-etapa {
+        padding: 22px;
+    }
+
+    body.pagina-empresa .empresa-foto {
+        height: 230px;
+    }
+
+    body.pagina-empresa .empresa-encerramento {
+        margin-top: 28px;
+        padding-top: 25px;
+    }
+
+    body.pagina-empresa .empresa-final-botoes {
+        width: 100%;
+    }
+
+    body.pagina-empresa .rodape-conteudo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.pagina-empresa .rodape-links {
+        justify-content: flex-start;
+    }
+
+    body.pagina-empresa .rodape .rodape-copyright {
+        grid-column: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.pagina-empresa *,
+    body.pagina-empresa *::before,
+    body.pagina-empresa *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

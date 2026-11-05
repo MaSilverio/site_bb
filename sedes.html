@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Conheça as unidades do Grupo BB Agronegócios, sua matriz em Bueno Brandão e sua presença em Boa Vista e Manaus.">
+    <meta name="theme-color" content="#183d2b">
+
+    <title>Nossas Sedes | Grupo BB Agronegócios</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="ESTILO/estilo.css">
+    <script src="JS/script.js" defer></script>
+
+    <style>
+        .grade-cartoes {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .cartao-sede {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .cartao-sede > .foto-quadro {
+            flex-shrink: 0;
+        }
+
+        .sede-conteudo {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 22px;
+            box-sizing: border-box;
+        }
+
+        .sede-conteudo > p {
+            line-height: 1.7;
+        }
+
+        .sede-detalhes {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .sede-detalhes p {
+            line-height: 1.7;
+        }
+
+        .cartao-sede .botao {
+            margin-top: 18px;
+            align-self: flex-start;
+            flex-shrink: 0;
+        }
+
+        .cartao-sede .foto-quadro img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            .grade-cartoes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grade-cartoes {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .sede-conteudo {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a class="marca" href="index.html" aria-label="Grupo BB Agronegócios - Início">
+        <img src="img/logo.png"
+             alt="Logo do Grupo BB Agronegócios"
+             onerror="this.style.display='none'">
+        <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+    </a>
+
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-controls="menu-principal"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="historia.html">Nossa história</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="safra.html">Safra</a>
+        <a href="sedes.html" aria-current="page">Nossas sedes</a>
+        <a href="equipe.html">Equipe</a>
+        <a href="patrocinadores.html">Parceiros</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="pagina-topo">
+        <div class="container">
+            <span class="sobretitulo">NOSSA PRESENÇA NO BRASIL</span>
+
+            <h1>Nossas sedes</h1>
+
+            <p>
+                O Grupo BB Agronegócios trabalha com produção,
+                comércio, transporte e beneficiamento de produtos
+                agrícolas, conectando produtores e clientes em
+                diferentes regiões do Brasil.
+            </p>
+        </div>
+    </section>
+
+    <section class="secao">
+        <div class="container duas-colunas">
+
+            <div>
+                <span class="sobretitulo">NOSSA ESTRUTURA</span>
+
+                <h2>Presença e expansão</h2>
+
+                <p>
+                    Desde sua fundação, em 2010, o Grupo BB
+                    Agronegócios vem ampliando suas atividades,
+                    diversificando seus produtos e fortalecendo
+                    sua atuação no mercado agrícola.
+                </p>
+
+                <p>
+                    A empresa começou com a união de produtores
+                    rurais e inicialmente trabalhava principalmente
+                    com batatas. Com o tempo, ampliou sua carteira
+                    de produtos e passou a atender grandes redes
+                    de supermercados, centrais de abastecimento
+                    e indústrias.
+                </p>
+
+                <p>
+                    O documento institucional informa três
+                    localidades relacionadas à estrutura da
+                    empresa: Boa Vista, Manaus e Bueno Brandão,
+                    onde está localizada a matriz.
+                </p>
+
+                <a href="historia.html" class="botao">
+                    Conheça nossa história
+                </a>
+            </div>
+
+            <div class="foto-quadro">
+                <img src="img/sedes-grupo.jpg"
+                     alt="Estrutura do Grupo BB Agronegócios"
+                     loading="lazy">
+
+                <p class="legenda-foto">
+                    Estrutura do Grupo BB Agronegócios.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="secao secao-alternativa">
+        <div class="container">
+
+            <div class="cabecalho-secao">
+                <span class="sobretitulo">ONDE ESTAMOS</span>
+
+                <h2>Conheça nossas unidades</h2>
+
+                <p>
+                    Confira as localidades informadas pela empresa
+                    e entre em contato para confirmar os endereços
+                    e as condições de atendimento de cada unidade.
+                </p>
+            </div>
+
+            <div class="grade-cartoes">
+
+                <article class="cartao cartao-sede">
+
+                    <div class="foto-quadro">
+                        <img src="img/sede-boa-vista.jpg"
+                             alt="Unidade de Boa Vista"
+                             loading="lazy">
+
+                        <p class="legenda-foto">
+                            Unidade de Boa Vista.
+                        </p>
+                    </div>
+
+                    <div class="sede-conteudo">
+                        <span class="produto-categoria">UNIDADE 01</span>
+
+                        <h3>Boa Vista</h3>
+
+                        <p>
+                            Boa Vista, em Roraima, integra a
+                            estrutura do Grupo BB Agronegócios.
+                            A empresa informa que iniciou, por
+                            meio dessa filial, atividades de
+                            exportação para países como Venezuela
+                            e Guiana Francesa.
+                        </p>
+
+                        <div class="sede-detalhes">
+                            <p>
+                                <strong>Localidade:</strong>
+                                Boa Vista, RR.
+                            </p>
+
+                            <p>
+                                <strong>Endereço:</strong>
+                                Consulte a empresa para confirmar
+                                o endereço completo.
+                            </p>
+
+                            <p>
+                                <strong>Atendimento:</strong>
+                                Entre em contato pelos canais
+                                oficiais da empresa.
+                            </p>
+                        </div>
+
+                        <a class="botao"
+                           href="https://www.google.com/maps/search/?api=1&query=Grupo+BB+Agronegocios+Boa+Vista+RR"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Consultar no mapa
+                        </a>
+                    </div>
+
+                </article>
+
+                <article class="cartao cartao-sede">
+
+                    <div class="foto-quadro">
+                        <img src="img/sede-manaus.jpg"
+                             alt="Unidade de Manaus"
+                             loading="lazy">
+
+                        <p class="legenda-foto">
+                            Unidade de Manaus.
+                        </p>
+                    </div>
+
+                    <div class="sede-conteudo">
+                        <span class="produto-categoria">UNIDADE 02</span>
+
+                        <h3>Manaus</h3>
+
+                        <p>
+                            Manaus, no Amazonas, é uma das
+                            localidades informadas na estrutura
+                            do Grupo BB Agronegócios.
+                        </p>
+
+                        <div class="sede-detalhes">
+                            <p>
+                                <strong>Localidade:</strong>
+                                Manaus, AM.
+                            </p>
+
+                            <p>
+                                <strong>Endereço:</strong>
+                                Consulte a empresa para confirmar
+                                o endereço completo.
+                            </p>
+
+                            <p>
+                                <strong>Atendimento:</strong>
+                                Entre em contato pelos canais
+                                oficiais da empresa.
+                            </p>
+                        </div>
+
+                        <a class="botao"
+                           href="https://www.google.com/maps/search/?api=1&query=Grupo+BB+Agronegocios+Manaus+AM"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Consultar no mapa
+                        </a>
+                    </div>
+
+                </article>
+
+                <article class="cartao cartao-sede">
+
+                    <div class="foto-quadro">
+                        <img src="img/sede-bueno-brandao.jpg"
+                             alt="Matriz em Bueno Brandão"
+                             loading="lazy">
+
+                        <p class="legenda-foto">
+                            Matriz em Bueno Brandão, Minas Gerais.
+                        </p>
+                    </div>
+
+                    <div class="sede-conteudo">
+                        <span class="produto-categoria">MATRIZ</span>
+
+                        <h3>Bueno Brandão</h3>
+
+                        <p>
+                            Foi em Bueno Brandão, Minas Gerais,
+                            que a empresa estabeleceu sua matriz.
+                            Sua história começou com a união
+                            de produtores rurais em 2010.
+                        </p>
+
+                        <div class="sede-detalhes">
+                            <p>
+                                <strong>Localidade:</strong>
+                                Bueno Brandão, MG.
+                            </p>
+
+                            <p>
+                                <strong>Endereço:</strong>
+                                Estrada para Munhoz, km 1,
+                                Bairro Vargem Grande.
+                            </p>
+
+                            <p>
+                                <strong>Atendimento:</strong>
+                                Horário comercial. Consulte a
+                                equipe para confirmar os horários.
+                            </p>
+                        </div>
+
+                        
+<a class="botao"
+   href="https://www.google.com/maps/search/?api=1&query=Grupo+BB+Agroneg%C3%B3cios"
+   target="_blank"
+   rel="noopener noreferrer">
+    Consultar no mapa
+</a>
+
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="nota-nutricional">
+                Os endereços completos das unidades de Boa Vista
+                e Manaus não constam no documento institucional
+                consultado. Entre em contato com a empresa para
+                confirmar essas informações antes de visitar
+                as unidades.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="secao">
+        <div class="container duas-colunas">
+
+            <div>
+                <span class="sobretitulo">NOSSO COMPROMISSO</span>
+
+                <h2>Atendimento em todo o Brasil</h2>
+
+                <p>
+                    O Grupo BB Agronegócios informa que atende
+                    todos os estados brasileiros, fornecendo
+                    produtos agrícolas para centrais de
+                    abastecimento, grandes redes de supermercados
+                    e indústrias.
+                </p>
+
+                <p>
+                    A empresa trabalha com produção própria
+                    e produtos adquiridos de terceiros.
+                    Também realiza transporte e beneficiamento
+                    de produtos agrícolas.
+                </p>
+
+                <p>
+                    Seu objetivo é continuar expandindo suas
+                    atividades e ampliar a atuação internacional,
+                    mantendo o compromisso com a qualidade,
+                    a honestidade e o preço justo.
+                </p>
+
+                <a href="produtos.html" class="botao">
+                    Conheça nossos produtos
+                </a>
+            </div>
+
+            <div class="foto-quadro">
+                <img src="img/estrutura-logistica.jpg"
+                     alt="Estrutura logística do Grupo BB Agronegócios"
+                     loading="lazy">
+
+                <p class="legenda-foto">
+                    Produção, transporte e comercialização
+                    de produtos agrícolas.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="secao">
+        <div class="container">
+
+            <div class="faixa-comercial">
+                <div>
+                    <span class="sobretitulo">GRUPO BB AGRONEGÓCIOS</span>
+
+                    <h2>Entre em contato com nossa equipe</h2>
+
+                    <p>
+                        Precisa de informações sobre produtos,
+                        unidades, disponibilidade ou atendimento?
+                        Fale conosco pelos canais oficiais.
+                    </p>
+                </div>
+
+                <a href="contato.html" class="botao botao-claro">
+                    Acessar contato
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-conteudo">
+
+        <div>
+            <a class="marca marca-rodape" href="index.html">
+                <img src="img/logo.png"
+                     alt="Logo do Grupo BB Agronegócios"
+                     onerror="this.style.display='none'">
+
+                <span>GRUPO BB <strong>AGRONEGÓCIOS</strong></span>
+            </a>
+
+            <p>Compromisso com o campo, qualidade e parceria.</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="produtos.html">Produtos</a>
+            <a href="sedes.html">Nossas sedes</a>
+        </div>
+
+        <p class="rodape-copyright">
+            © <span id="ano-atual">2026</span> Grupo BB Agronegócios.
+        </p>
+
+    </div>
+</footer>
+
+</body>
+</html>
